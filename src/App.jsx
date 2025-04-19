@@ -1,0 +1,21 @@
+//App.js
+
+import TopBar from './components/topBar';
+import Home from './components/home/Home';
+import Header from './components/Header';
+import './App.css'
+
+function App() {
+	return (
+		<>
+			<div className="App">
+				<TopBar />
+				<Home />
+				<Header />
+			</div>
+			
+		</>
+	);
+}
+
+export default App;
