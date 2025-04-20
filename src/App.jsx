@@ -3,6 +3,9 @@
 import TopBar from './components/topbar/topBar';
 import Home from './components/home/Home';
 import Header from './components/header/Header';
+import Write from './components/write/write';
+import Single from "./components/home/single/single"
+import Settings from './components/settings/settings';
 import './App.css'
 
 function App() {
@@ -10,7 +13,7 @@ function App() {
 		<>
 			<div className="App">
 				<TopBar />
-				<Home />
+				<Settings />
 			</div>
 			
 		</>
