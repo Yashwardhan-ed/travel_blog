@@ -2,7 +2,9 @@ import "./posts.css"
 
 function posts() {
   return (
-    <div>posts</div>
+    <div className="posts">
+        
+    </div>
   )
 }
 

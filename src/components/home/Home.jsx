@@ -7,7 +7,7 @@ import SideBar from "../sidebar/SideBar"
 function Home() {
   return (
     <>
-      <header />
+      <Header />
       <div>
         <Posts />
         <SideBar />
