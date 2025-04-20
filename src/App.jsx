@@ -1,25 +1,29 @@
-//App.js
-
 import TopBar from './components/topbar/topBar';
 import Home from './components/home/Home';
-import Header from './components/header/Header';
 import Write from './components/write/write';
-import Single from "./components/home/single/single"
+import Single from "./components/home/single/single";
 import Settings from './components/settings/settings';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 function App() {
-	return (
-		<>
-			<div className="App">
-				<TopBar />
-				<Register />
-			</div>
-			
-		</>
-	);
+  return (
+    <BrowserRouter>
+      <TopBar />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/write" element={<Write />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/post/:id" element={<Single />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
