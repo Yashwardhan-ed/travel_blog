@@ -13,21 +13,22 @@ function Write() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const data = new FormData()
-      data.append("title", title)
-      data.append("description", desc)
-      data.append("location", location)
-      if (file) {
-        data.append("image", file)
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+      if (!currentUser) {
+        navigate('/login')
+        return
       }
 
       const posts = JSON.parse(localStorage.getItem('travelPosts') || '[]')
       const newPost = {
+        id: Date.now().toString(),
         title,
         desc,
         location,
         image: file ? URL.createObjectURL(file) : null,
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
+        author: currentUser.username,
+        authorEmail: currentUser.email
       }
       posts.push(newPost)
       localStorage.setItem('travelPosts', JSON.stringify(posts))

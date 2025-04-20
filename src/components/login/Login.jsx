@@ -11,7 +11,18 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      navigate("/")
+      const users = JSON.parse(localStorage.getItem('users') || '[]')
+      const user = users.find(u => u.email === email && u.password === password)
+
+      if (user) {
+        localStorage.setItem('currentUser', JSON.stringify({
+          username: user.username,
+          email: user.email
+        }))
+        navigate("/")
+      } else {
+        setError("Invalid email or password")
+      }
     } catch (err) {
       setError("Login failed")
     }
@@ -25,6 +36,7 @@ function Login() {
         <label>Email</label>
         <input 
           type="email" 
+          className='loginInput'
           placeholder='Enter your email...'
           value={email}
           onChange={e => setEmail(e.target.value)}
@@ -33,6 +45,7 @@ function Login() {
         <label>Password</label>
         <input 
           type="password" 
+          className='loginInput'
           placeholder='Enter your password...'
           value={password}
           onChange={e => setPassword(e.target.value)}

@@ -13,6 +13,7 @@ function Post({ post }) {
       />
       <div className="postInfo">
         <span className="postLocation">{post?.location}</span>
+        <span className="postAuthor">By: {post?.author}</span>
       </div>
       <Link to={`/post/${post?._id}`}>
         <span className="postTitle">

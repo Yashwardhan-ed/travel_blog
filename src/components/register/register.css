@@ -17,6 +17,10 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
 }
 .registerform > label {
     margin: 10px 0;
@@ -47,4 +51,9 @@
     padding: 10px;
     border-radius: 10px; 
     width: 200px;
+}
+.registerError {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
 }

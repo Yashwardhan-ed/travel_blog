@@ -16,15 +16,19 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
 }
-.loginform > label {
+.loginForm > label {
     margin: 10px, 0;
 }
 .loginInput{
     padding: 10px;
     background-color: white;
     border: none;
-
+    border-radius: 10px;
 }
 .loginButton{
     margin-top: 20px;
@@ -44,5 +48,10 @@
     color: white;
     padding: 10px;
     border-radius: 10px; 
-    width: 180px;
+    width: 200px;
+}
+.loginError {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
 }
