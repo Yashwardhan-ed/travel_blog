@@ -1,32 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { userContext } from '../login/userContext/userContext';
+
 import "./topBar.css"
 
 function topBar() {
-  const [user, setUser] = useState(null)
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'))
-    setUser(currentUser)
-  }, [])
+  const { isLogged, handleIsLogged } = useContext(userContext); 
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('currentUser')
-    setUser(null)
-    navigate('/login')
-  }
+    localStorage.removeItem('currentUser');
+    handleIsLogged(false); 
+    navigate('/login');
+  };
 
   return (
     <div className='top'>
-      <i className="topIcon fa-brands fa-facebook"></i>
-      <i className="topIcon fa-brands fa-x-twitter"></i>
-      <i className="topIcon fa-brands fa-instagram"></i>
       <ul className='topList'>
         <li className='topListItem'>
           <Link to="/">HOME</Link>
         </li>
-        {user && (
+        {isLogged && (
           <>
             <li className='topListItem'>
               <Link to="/write">WRITE</Link>
@@ -39,7 +33,7 @@ function topBar() {
             </li>
           </>
         )}
-        {!user && (
+        {!isLogged && (
           <>
             <li className='topListItem'>
               <Link to="/login">LOGIN</Link>
@@ -52,19 +46,16 @@ function topBar() {
         <li className='topListItem'>
           <Link to="/recommendations">RECOMMENDATIONS</Link>
         </li>
-        <li className='topListItem'>
-          <Link to="/settings">SETTINGS</Link>
-        </li>
       </ul>
       <div className='topRight'>
-        {user && (
-          <span className="topUsername">{user.username}</span>
+        {isLogged && (
+          <span className="topUsername">Welcome!</span>
         )}
         <img className="topImg" src="" alt="" />
         <i className="searchIcon fa-solid fa-magnifying-glass"></i>
       </div>
     </div>
-  )
+  );
 }
 
-export default topBar
+export default topBar;

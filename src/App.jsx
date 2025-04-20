@@ -8,23 +8,26 @@ import Register from './components/register/Register';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Recommendation from './components/recommendation/Recommendation';
+import UserProvider from './components/login/userContext/userContext'; // 
 
 function App() {
   return (
-    <BrowserRouter>
-      <TopBar />
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/write" element={<Write />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/post/:id" element={<Single />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-		  <Route path="/recommendations" element={<Recommendation />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <TopBar />
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/write" element={<Write />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/post/:id" element={<Single />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/recommendations" element={<Recommendation />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 

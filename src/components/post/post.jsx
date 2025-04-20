@@ -2,12 +2,12 @@ import { Link } from "react-router-dom"
 import "./post.css"
 
 function Post({ post }) {
-  const defaultImage = "https://images.unsplash.com/photo-1606240724602-5b21f896eae8"
+  const image = "https://images.unsplash.com/photo-1606240724602-5b21f896eae8"
   
   return (
     <div className="post">
       <img 
-        src={post?.image || defaultImage} 
+        src={post?.image || image} 
         alt={post?.title} 
         className="postImg"
       />

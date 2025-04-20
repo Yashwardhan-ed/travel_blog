@@ -1,32 +1,36 @@
-import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import React, { useState, useContext } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { userContext } from './userContext/userContext';
+
 import "./login.css"
 
 function Login() {
-  const navigate = useNavigate()
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
+  const navigate = useNavigate();
+  const { handleIsLogged } = useContext(userContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const users = JSON.parse(localStorage.getItem('users') || '[]')
-      const user = users.find(u => u.email === email && u.password === password)
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const user = users.find(u => u.email === email && u.password === password);
 
       if (user) {
         localStorage.setItem('currentUser', JSON.stringify({
           username: user.username,
           email: user.email
-        }))
-        navigate("/")
+        }));
+        handleIsLogged(true);
+        navigate("/");
       } else {
-        setError("Invalid email or password")
+        setError("Invalid email or password");
       }
     } catch (err) {
-      setError("Login failed")
+      setError("Login failed");
     }
-  }
+  };
 
   return (
     <div className='login'>
