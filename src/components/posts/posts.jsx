@@ -1,15 +1,27 @@
+import { useState, useEffect } from "react"
 import "./posts.css"
 import Post from "../post/post"
-function posts() {
+
+function Posts() {
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    const fetchPosts = () => {
+      const savedPosts = JSON.parse(localStorage.getItem('travelPosts') || '[]')
+      setPosts(savedPosts)
+    }
+    fetchPosts()
+  }, [])
+
   return (
     <div className="posts">
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+      {posts.length === 0 ? (
+        <p className="noPosts">No travel stories.</p>
+      ) : (
+        posts.map(post => <Post key={post._id} post={post} />)
+      )}
     </div>
   )
 }
 
-export default posts
+export default Posts

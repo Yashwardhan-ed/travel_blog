@@ -21,6 +21,9 @@
     font-weight: 600;
     line-height: normal;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .sidebarItem > img {
     margin-top: 15px;
@@ -49,4 +52,41 @@
     font-size: 15px;
     margin-left: 10px;
     cursor: pointer;
+}
+.about{
+    margin-right: 5px;
+}
+
+.aboutContent {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.aboutTextarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.aboutText {
+    text-align: left;
+    line-height: 1.5;
+    color: #666;
+}
+
+.editButton, .saveButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    margin-left: 10px;
+}
+
+.editButton:hover, .saveButton:hover {
+    color: #333;
 }

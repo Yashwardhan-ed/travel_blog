@@ -7,6 +7,7 @@ import Login from './components/login/Login';
 import Register from './components/register/Register';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
+import Recommendation from './components/recommendation/Recommendation';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/post/:id" element={<Single />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+		  <Route path="/recommendations" element={<Recommendation />} />
         </Routes>
       </div>
     </BrowserRouter>

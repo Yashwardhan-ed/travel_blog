@@ -1,14 +1,16 @@
 .login{
-    height: calc(100vh- 50px);
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: url("https://images.unsplash.com/photo-1532970875678-74ce3fc124ca?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJsdXIlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww");
     background-size: cover;
+    border-radius: 10px;
 }
 .loginTitle{
     font-size: 50px;
+    font-family: 'Playfair Display', serif;
 }
 .loginForm{
     margin-top: 20px;

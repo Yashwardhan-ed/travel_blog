@@ -28,6 +28,9 @@ function topBar() {
               </li>
             </>
           )}
+          <li className='topListItem'>
+            <Link to="/recommendations">RECOMMENDATIONS</Link>
+          </li>
         </ul>
       <div className='topRight'>
         <img className="topImg" src="" alt="" />
