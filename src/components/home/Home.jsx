@@ -1,6 +1,5 @@
 import "./Home.css"
-import React from 'react'
-import Header from "../Header"
+import Header from "../header/Header"
 import Posts from "../posts/posts"
 import SideBar from "../sidebar/SideBar"
 
@@ -8,7 +7,7 @@ function Home() {
   return (
     <>
       <Header />
-      <div>
+      <div className="home">
         <Posts />
         <SideBar />
       </div>

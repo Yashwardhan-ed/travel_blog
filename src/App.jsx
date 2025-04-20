@@ -1,8 +1,8 @@
 //App.js
 
-import TopBar from './components/topBar';
+import TopBar from './components/topbar/topBar';
 import Home from './components/home/Home';
-import Header from './components/Header';
+import Header from './components/header/Header';
 import './App.css'
 
 function App() {

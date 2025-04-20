@@ -14,7 +14,7 @@ function topBar() {
             </ul>
         <div className='topRight'>
             <img className="topImg" src="" alt="" />
-            <i class="searchIcon fa-solid fa-magnifying-glass"></i>
+            <i className="searchIcon fa-solid fa-magnifying-glass"></i>
         </div>
     </div>
   )
