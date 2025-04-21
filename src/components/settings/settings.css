@@ -34,7 +34,7 @@
 .settingsPP > img{
     width: 70px;
     height: 70px;
-    border-radius: 20px;
+    border-radius: 100%;
     object-fit: cover;
 }
 .settingsPPIcon{
@@ -65,7 +65,7 @@
     align-self: center;
     margin-top: 20px;
     color: white;
-    background-color: teal;
+    background-color: lab(48.26% -28.84 -8.48);
     padding: 10px;
     border: none;
     border-radius: 10px;

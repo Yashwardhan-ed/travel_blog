@@ -9,7 +9,7 @@ function Home() {
       <Header />
       <div className="home">
         <Posts />
-        <SideBar />
+        {/* <SideBar /> */}
       </div>
     </>
   )

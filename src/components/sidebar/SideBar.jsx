@@ -18,10 +18,13 @@ function SideBar() {
     }
 
     return (
-        <div className="sidebar">
+        <div
+            className="sidebar flex flex-row justify-around items-start border border-[#939200] shadow-[0_0_2px_#888888] rounded-xl bg-[#ffda83] p-3 w-full mt-5"
+        >
             <div className="sidebarItem">
-                <div className="sidebarTitle">
-                    <span className="about">About Me</span>
+
+                <div className="sidebarTitle flex gap-2">
+                    <span className="about font-bold">About Me</span>
                     {!isEditing ? (
                         <button onClick={handleEdit} className="editButton">
                             <i className="fa-solid fa-pen-to-square"></i>
@@ -32,6 +35,7 @@ function SideBar() {
                         </button>
                     )}
                 </div>
+
                 <div className="aboutContent">
                     {isEditing ? (
                         <textarea
@@ -41,13 +45,17 @@ function SideBar() {
                             className="aboutTextarea"
                         />
                     ) : (
-                        <p className="aboutText">{about}</p>
+                        <p className="aboutText text-center">{about}</p>
                     )}
                 </div>
             </div>
+
             <div className="sidebarItem">
-                <span className="sidebarTitle">Categories</span>
-                <ul className="sidebarList">
+                <span className="sidebarTitle font-bold">Categories</span>
+                <ul
+                    className="sidebarList grid grid-cols-2 gap-2 mt-2"
+                    style={{ listStyleType: "none", padding: 0 }}
+                >
                     <li className="sidebarListItem">Life</li>
                     <li className="sidebarListItem">Music</li>
                     <li className="sidebarListItem">Tech</li>
@@ -55,14 +63,16 @@ function SideBar() {
                     <li className="sidebarListItem">Style</li>
                 </ul>
             </div>
+
             <div className="sidebarItem">
-                <span className="sidebarTitle">Follow Us</span>
-                <div className="sidebarSocial">
+                <span className="sidebarTitle font-bold">Follow Us</span>
+                <div className="sidebarSocial flex justify-around items-center mt-2">
                     <i className="sidebarIcon fa-brands fa-facebook"></i>
                     <i className="sidebarIcon fa-brands fa-x-twitter"></i>
                     <i className="sidebarIcon fa-brands fa-instagram"></i>
                 </div>
             </div>
+
         </div>
     )
 }

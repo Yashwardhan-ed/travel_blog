@@ -21,7 +21,7 @@ function Posts() {
   }, [])
 
   return (
-    <div className="posts">
+    <div className="posts mb-4">
       {user ? (
         posts.length === 0 ? (
           <p className="noPosts">You haven't written any travel stories yet.</p>

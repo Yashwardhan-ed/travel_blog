@@ -6,16 +6,16 @@ import Settings from './components/settings/settings';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css'
 import Recommendation from './components/recommendation/Recommendation';
-import UserProvider from './components/login/userContext/userContext'; // 
+import UserProvider from './components/login/userContext/userContext';
+import SideBar from './components/sidebar/SideBar';
 
 function App() {
   return (
     <UserProvider>
       <BrowserRouter>
+        <div className="App p-3 m-3 rounded-xl bg-[#] shadow-[0_0_2px_#634200]">
         <TopBar />
-        <div className="App">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/write" element={<Write />} />
@@ -25,6 +25,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/recommendations" element={<Recommendation />} />
           </Routes>
+          <SideBar />
         </div>
       </BrowserRouter>
     </UserProvider>
