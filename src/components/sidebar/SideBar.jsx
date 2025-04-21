@@ -4,7 +4,7 @@ import { useState, useRef } from "react"
 function SideBar() {
     const [isEditing, setIsEditing] = useState(false)
     const [about, setAbout] = useState(
-        localStorage.getItem("about") || ""
+        localStorage.getItem("about") || "desc about me"
     );
     const textareaRef = useRef(null)
 
@@ -15,6 +15,7 @@ function SideBar() {
     const handleSave = () => {
         setIsEditing(false);
         localStorage.setItem("about", about);
+        textareaRef.current.blur();
     }
 
     return (

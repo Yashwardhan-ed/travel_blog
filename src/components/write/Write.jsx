@@ -40,13 +40,13 @@ function Write() {
   }
 
   return (
-    <div className='write'>
+    <div className='write write-responsive'>
       {file && (
-        <img src={URL.createObjectURL(file)} alt="" className="writeImg" />
+        <img src={URL.createObjectURL(file)} alt="" className="writeImg writeImg-responsive" />
       )}
-      <form className='writeForm' onSubmit={handleSubmit}>
+      <form className='writeForm writeForm-responsive' onSubmit={handleSubmit}>
         {error && <p className="writeError">{error}</p>}
-        <div className="writeFormGroup">
+        <div className="writeFormGroup writeFormGroup-responsive">
           <label htmlFor="fileInput">
             <i className="writeIcon fa-solid fa-plus"></i>
           </label>
@@ -59,31 +59,31 @@ function Write() {
           <input 
             type="text"
             placeholder="Title" 
-            className='writeInput'
+            className='writeInput writeInput-responsive ml-1'
             autoFocus={true}
             value={title}
             onChange={e => setTitle(e.target.value)}
           />
         </div>
-        <div className="writeFormGroup">
+        <div className="writeFormGroup writeFormGroup-responsive">
           <input 
             type="text"
             placeholder="Location" 
-            className='writeInput'
+            className='writeInput writeInput-responsive'
             value={location}
             onChange={e => setLocation(e.target.value)}
           />
         </div>
-        <div className="writeFormGroup">
+        <div className="writeFormGroup writeFormGroup-responsive">
           <textarea 
             placeholder="Tell your travel story..."
             type="text" 
-            className='writeInput writeText'
+            className='writeInput writeText writeInput-responsive'
             value={desc}
             onChange={e => setDesc(e.target.value)}
           ></textarea>
         </div>
-        <button className='writeSubmit' type="submit">
+        <button className='writeSubmit writeSubmit-responsive' type="submit">
           Publish
         </button>
       </form>

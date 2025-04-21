@@ -15,7 +15,7 @@ function topBar() {
   };
 
   return (
-    <div className='top text-sm sm:text-xl font-semibold px-3 py-2 bg-[#ffda83] border border-[#939200]shadow-[0_0_2px_#888888] rounded-lg flex justify-between items-center mb-5'
+    <div className='top top-responsive text-sm sm:text-xl font-semibold px-3 py-2 bg-[#ffda83] border border-[#939200]shadow-[0_0_2px_#888888] rounded-lg flex justify-between items-center mb-5'
     style={{fontFamily: "Instrument Serif"}}>
       <ul className='topList flex gap-3'>
 

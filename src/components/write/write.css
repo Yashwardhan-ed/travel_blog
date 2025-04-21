@@ -1,15 +1,21 @@
-.write{
-    padding-top: 50px;
+.write {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
-.writeForm{
+
+.writeForm {
     position: relative;
 }
-.writeFormGroup{
-    margin-left: 150px;
+
+.writeFormGroup {
+    margin: 1rem 0;
+    width: 100%;
     display: flex;
     align-items: center;
 }
-.writeIcon{
+
+.writeIcon {
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -21,27 +27,79 @@
     color: rgb(67, 65, 65);
     cursor: pointer;
 }
-.writeInput{
+
+.writeInput {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     flex: 30px;
-    border:none;
-    padding: 20px;
-    width: 70vw;
 }
-.writeInput:focus{
+
+.writeInput:focus {
     outline: none;
 }
-.writeText{
+
+.writeText {
     font-size: 20px;
+    min-height: 150px;
+    resize: vertical;
 }
-.writeSubmit{
-    position: absolute;
+
+.writeSubmit {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
     top: 20px;
     right: 50px;
     color: white;
     background-color: teal;
-    padding: 10px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+}
+
+.writeInput {
+    font-size: 14px;
+}
+
+.writeImg {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .write {
+        padding: 10px;
+    }
+
+    .writeImg {
+        max-height: 200px;
+    }
+
+    .writeInput {
+        padding: 0.6rem;
+    }
+
+    .writeText {
+        min-height: 120px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .write {
+        padding: 8px;
+    }
+
+    .writeFormGroup {
+        margin: 0.8rem 0;
+    }
+
+    .writeInput {
+        font-size: 14px;
+    }
 }

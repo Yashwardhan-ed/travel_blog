@@ -48,3 +48,56 @@
     cursor: pointer;
     margin-left: 15px;
 } */
+
+.top {
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.topList {
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.topListItem {
+    word-break: break-word;
+    min-width: 0;
+}
+
+.topRight {
+    min-width: 0;
+}
+
+@media (max-width: 600px) {
+    .top {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px 2vw;
+        gap: 8px;
+        border-radius: 0;
+        margin-bottom: 10px;
+    }
+    .topList {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        width: 100%;
+    }
+    .topListItem {
+        font-size: 1rem;
+        padding: 4px 0;
+        width: 100%;
+    }
+    .topRight {
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: 6px;
+    }
+    .topImg {
+        height: 32px !important;
+        width: 32px !important;
+    }
+    .topUsername {
+        font-size: 1rem;
+    }
+}
